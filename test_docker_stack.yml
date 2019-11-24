@@ -1,0 +1,12 @@
+version: '3.7'
+
+services:
+  tarantool:
+    command: tarantool test_healthy_tarantool.lua
+    image: tarantool/tarantool:2.1.2
+    ports:
+      - "3308:3301"
+    volumes:
+      - type: bind
+        source: ./
+        target: /opt/tarantool
